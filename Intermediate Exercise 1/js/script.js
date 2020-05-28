@@ -29,3 +29,14 @@ let hotelList = [
 console.log(hotelList[0]);
 console.log(hotelList[1]);
 console.log(hotelList[2]);
+
+for (i = 0; i <= hotelList.length - 1; i++) {
+	let idString = `hotel${i + 1}Img`;
+	document.getElementById(idString).setAttribute("src", hotelList[i].image);
+
+	idString = `hotel${i + 1}Name`;
+	document.getElementById(idString).innerText = hotelList[i].hotelName;
+
+	idString = `hotel${i + 1}Btn`;
+	document.getElementById(idString).setAttribute("value", "Book Hotel");
+}
