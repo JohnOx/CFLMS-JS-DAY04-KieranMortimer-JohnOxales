@@ -12,7 +12,7 @@ class Hotel {
 	}
 
 	showAvailability(nights) {
-		if (this.noNights > nights) {
+		if (this.noNights >= nights) {
 			return "I'll reserve";
 		} else {
 			return `Sorry, no available nights for ${this.hotelName}`;
@@ -39,4 +39,20 @@ for (i = 0; i <= hotelList.length - 1; i++) {
 
 	idString = `hotel${i + 1}Btn`;
 	document.getElementById(idString).setAttribute("value", "Book Hotel");
+}
+
+function buttonPress(cardNo) {
+	let outputID = `hotel${cardNo}Output`;
+
+	document.getElementById(outputID).innerText = hotelList[
+		i - 1
+	].showAvailability(5);
+}
+
+for (i = 1; i <= hotelList.length - 1; i++) {
+	let btnString = `hotel${i}Btn`;
+
+	document
+		.getElementById(btnString)
+		.addEventListener("click", buttonPress(i), false);
 }
