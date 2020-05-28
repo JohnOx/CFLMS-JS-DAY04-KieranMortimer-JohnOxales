@@ -39,20 +39,57 @@ for (i = 0; i <= hotelList.length - 1; i++) {
 
 	idString = `hotel${i + 1}Btn`;
 	document.getElementById(idString).setAttribute("value", "Book Hotel");
+
+	console.log(`hotel${i + 1} Displayed`);
 }
 
-function buttonPress(cardNo) {
-	let outputID = `hotel${cardNo}Output`;
+document.getElementById("hotel1Btn").addEventListener(
+	"click",
+	function () {
+		if (document.getElementById("noNights").value == "") {
+			document.getElementById("hotel1Output").innerText =
+				"Please enter the number of nights you wish to stay";
+		} else {
+			document.getElementById(
+				"hotel1Output"
+			).innerText = hotelList[0].showAvailability(
+				document.getElementById("noNights").value
+			);
+		}
+	},
+	false
+);
 
-	document.getElementById(outputID).innerText = hotelList[
-		i - 1
-	].showAvailability(5);
-}
+document.getElementById("hotel2Btn").addEventListener(
+	"click",
+	function () {
+		if (document.getElementById("noNights").value == "") {
+			document.getElementById("hotel2Output").innerText =
+				"Please enter the number of nights you wish to stay";
+		} else {
+			document.getElementById(
+				"hotel2Output"
+			).innerText = hotelList[1].showAvailability(
+				document.getElementById("noNights").value
+			);
+		}
+	},
+	false
+);
 
-for (i = 1; i <= hotelList.length - 1; i++) {
-	let btnString = `hotel${i}Btn`;
-
-	document
-		.getElementById(btnString)
-		.addEventListener("click", buttonPress(i), false);
-}
+document.getElementById("hotel3Btn").addEventListener(
+	"click",
+	function () {
+		if (document.getElementById("noNights").value == "") {
+			document.getElementById("hotel3Output").innerText =
+				"Please enter the number of nights you wish to stay";
+		} else {
+			document.getElementById(
+				"hotel3Output"
+			).innerText = hotelList[2].showAvailability(
+				document.getElementById("noNights").value
+			);
+		}
+	},
+	false
+);
