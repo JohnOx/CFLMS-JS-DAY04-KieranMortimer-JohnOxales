@@ -1,0 +1,23 @@
+main {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-around;
+	align-content: center;
+
+	height: 100%;
+	width: 100%;
+}
+
+.card {
+	border-radius: 5px;
+	border: medium;
+	background-color: green;
+
+	height: 200px;
+	width: 200px;
+
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: space-around;
+	align-content: center;
+}
